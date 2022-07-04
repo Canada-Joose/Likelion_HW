@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+{% endblock css %}
+
+
+
+{% block content %}
+
+<div class="liner">
+  <h3>POST DETAIL</h3>
+</div>
+
+<br>
+
+<p class="titles">TITLE</p>
+<p>{{ post.title }}</p>
+<br>
+<p class="titles">CONTENT</p>
+<p>{{ post.content }}</p>
+<br>
+<br>
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="content" placeholder="댓글을 입력해주세요">
+  <button class="commentbutton" type="submit">ADD</button>
+</form>
+<br>
+<br>
+<div class="commentbox">
+  <p class="titles"> COMMENTS </p>
+  <br>
+  {% for comment in post.comments.all %}
+
+  <li class="list">
+    {{ comment.content }}
+    <a href="{% url 'delete_comment' post.pk comment.pk %}" class="commentbutton2">DELETE</a>
+  </li>
+
+  {% endfor %}
+</div>
+{% endblock content %}
+
+
+{% block button %}
+<div>
+  <div class="buttoncenter">
+    <div class="movebutton">
+      <a class="write-btn1" href="{% url 'list_page' %}">RETURN</a>
+      <a class="write-btn1" href="{% url 'edit_page' post.pk %}">EDIT</a>
+      <a class="write-btn1" href="{% url 'delete' post.pk %}">DELETE</a>
+    </div>
+  </div>
+</div>
+
+{% endblock button %}

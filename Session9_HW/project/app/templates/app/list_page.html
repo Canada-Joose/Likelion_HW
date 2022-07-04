@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/list_page_new.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  {{posts.update_counter}}
+  <title>POSTS</title>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="page-header">
+        <h2>POSTS</h2>
+      </header>
+      <div class="content-container">
+        <div class="liner">
+          <h3>LIST</h3>
+          <div class="movebutton">
+            <a class="write-btn" href="{% url 'create_page' %}">NEW POST</a>
+          </div>
+        </div>
+        <br>
+        {% if not posts %}
+        <!-- 1. 조건문 이용해서 아래 p태그는 게시글이 없을 때만 보이도록 하기-->
+        <p class="if-no-post">NO POST</p>
+        {% endif %}
+
+        {% for post in posts %}
+
+        <div class="postloop">
+          <a href="{% url 'detail_page' post.pk %}" class="post-title">
+            {{ post.title }}
+          </a>
+          <span class="font">
+            {{ post.content }}
+          </span>
+          <span class="font">
+            {{ post.n_hit }}
+          </span>
+        </div>
+        {% endfor %}
+        <!-- 2. 반복문을 이용하여 게시글들(posts)의 제목을 a태그로 감싸서 리스팅하기 
+              2-1. 이때, a태그의 class는 "post-title"으로 하기 
+              2-2. a태그의 href 속성을 이용해서 해당 게시글의 디테일 페이지('detail_page')와 연결하기 
+              (2-2가 어렵다면 detail_page.html을 참고하세요)
+
+            !! content-container div 내부에 작성해주세요~
+        -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

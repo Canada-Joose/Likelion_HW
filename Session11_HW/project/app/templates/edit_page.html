@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'edit.css' %}" />
+{% endblock css %}
+
+
+
+{% block content %}
+
+<div class="liner">
+  <h3>POST EDIT</h3>
+</div>
+<br>
+
+<form method="POST">
+  {% csrf_token %}
+  <label for="title">TITLE</label>
+  <br>
+  <!-- 아래 input의 기본값을 게시글(post)의 title으로 세팅하기 -->
+  <input name="title" value="{{ post.title }}" />
+  <br><br>
+  <label for="title">CONTENT</label>
+  <br>
+  <!-- 아래 textarea의 기본값을 게시글(post)의 content으로 세팅하기 -->
+  <textarea name="content">{{ post.content }}</textarea>
+  <br>
+  <button type="submit">EDIT</button>
+</form>
+
+{% endblock content %}
+
+
+{% block button %}
+<div class="buttoncenter">
+  <div class="movebutton">
+    <a class="write-btn1" href="{% url 'list_page' %}">RETURN</a>
+  </div>
+</div>
+{% endblock button %}

@@ -1,0 +1,68 @@
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.page-header {
+  width: 800px;
+  height: 140px;
+  margin-top: 30px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: rgba(11, 12, 97, 0.801);
+  width: 100px;
+  height: 23px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  border-radius: 9px;
+  font-family: 'Jua', sans-serif;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: gray;
+}
+
+h2 {
+  color: rgba(11, 12, 97, 0.801);
+  font-size: 70px;
+  margin: 0px;
+  font-family: 'Jua', sans-serif;
+}
+
+h3 {
+  color: rgba(4, 5, 8, 0.801);
+  font-size: 30px;
+  margin: 0px;
+  font-family: 'Jua', sans-serif;
+}
+
+p {
+  color: rgba(6, 6, 19, 0.801);
+  font-size: 22px;
+  margin: 0px;
+  font-family: 'Jua', sans-serif;
+}
+
+.content-container {
+  border: solid white;
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}

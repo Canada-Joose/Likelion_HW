@@ -1,0 +1,90 @@
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.page-header {
+  width: 800px;
+  height: 140px;
+  margin-top: 30px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: rgba(11, 12, 97, 0.801);
+  width: 100px;
+  height: 23px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  border-radius: 9px;
+  font-family: 'Jua', sans-serif;
+}
+
+.btn:hover {
+  background-color: gray;
+}
+
+h2 {
+  color: rgba(11, 12, 97, 0.801);
+  font-size: 70px;
+  margin: 0px;
+  font-family: 'Jua', sans-serif;
+}
+
+.content-container {
+  border: solid white;
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  margin: 10px;
+  font-family: 'Jua', sans-serif;
+  font-size: 15px;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
+  color: black;
+  margin: 10px;
+  font-family: 'Jua', sans-serif;
+  font-size: 15px;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  background-color: rgba(11, 12, 97, 0.801);
+  padding-top: 5px;
+  padding-bottom:5px;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  border-radius: 9px;
+  font-family: 'Jua', sans-serif;
+}
+
+
+.liner {
+  width: 650px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+label {
+  font-family: 'Jua', sans-serif;
+}

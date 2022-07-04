@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  {% block css %}
+
+  {% endblock css %}
+
+  <title>POSTS</title>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="page-header">
+        <h2>POSTS</h2>
+      </header>
+      <div class="content-container">
+
+        {% block content %}
+        <!-- 여기엔 흰 페이지 위에 나와야할 것들을 넣으면 됨. -->
+        {% endblock content %}
+
+      </div>
+      {% block button %}
+
+      {% endblock button %}
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer">
+      INSTAGRAM: canada_joose
+    </div>
+    <div class="footer">
+      © COPYRIGHT 2022 HTML
+    </div>
+  </footer>
+</body>
+
+</html>

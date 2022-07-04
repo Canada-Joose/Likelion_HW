@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'allcss.css' %}" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+
+<body>
+    <form action="{% url 'count' %}" method="post">{% csrf_token %}
+        <div class="for_h1">
+            <h1>Letter Counter</h1>
+            <input type="submit" value="RENEW" />
+        </div>
+        <textarea name="text" cols="30" rows="10" placeholder="Please fill in your text">{{text}}</textarea>
+        <br />
+        <div class="results">
+            <div class="first">
+                <span class="Menu">Letter (w/ spaces): </span> <span class="number"> {{total_len}} </span> <span>letters
+                </span>
+            </div>
+            <div class="first">
+                <span class="Menu">Letter (w/o spaces): </span> <span class="number"> {{no_blank_len}} </span>
+                <span>letters </span>
+            </div>
+            <div class="first">
+                <span class="Menu">Word : </span> <span class="number"> {{word_num}} </span><span>words </span>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

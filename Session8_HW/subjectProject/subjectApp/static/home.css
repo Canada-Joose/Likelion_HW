@@ -1,0 +1,194 @@
+body {
+    display: flex;
+    margin: 0px;
+}
+
+.outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    align-items: flex-start;
+}
+
+.innertop {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    color:rgb(5, 35, 71);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 45px;
+    margin-left: 2%;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+}
+
+.inner {
+    width: 80%;
+}
+
+.inner2{
+    width: 100%;
+    height: 65px;
+    border-radius: 26px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+    border: white;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+}
+
+.titlediv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2.5%;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+}
+
+.headliner {
+    width: 18%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2.5%;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+}
+
+.headliner2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2.5%;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+}
+
+.headliner3 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-left: 2.5%;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+}
+
+.nontitlediv {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.todoname {
+    color:rgb(5, 35, 71);
+    font-weight: 700;
+    font-size: 32px;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+
+.lecturetitle {
+    color:rgb(5, 35, 71);
+    font-weight: 700;
+    font-size: 27px;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.tododate {
+    color:rgb(228, 138, 4);
+    font-weight: 800;
+    font-size: 19px;
+    text-decoration-line: none;
+    /* font-family: SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif; */
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.tododate1 {
+    color:rgb(228, 138, 4);
+    font-weight: 800;
+    font-size: 25px;
+    text-decoration-line: none;
+    /* font-family: SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif; */
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.tododday {
+    color:rgb(236, 148, 15);
+    font-weight: 800;
+    font-size: 19px;
+    /* font-family: SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif; */
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.todocontent {
+    font-weight: 600;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1%;
+    margin-left: 2.5%;
+    font-family: SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    margin-left: 2.5%;
+    font-family: SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+
+.linker {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 2.5%;
+    font-family: SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.cantsee {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}

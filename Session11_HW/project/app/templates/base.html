@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %} {% load socialaccount %} {% providers_media_js %}
+  <link rel="stylesheet" type="text/css" href="{% static 'base_.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <title>NEXT-LIKELION</title>
+  {% block css %}
+
+  {% endblock %}
+
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="navbar__logo">
+      <a href="#" class="navbar__logo_1">블로그</a>
+      <!-- <a href="#" class="navbar__logo_1">KU독</a> -->
+      <a href="#" class="navbar__logo_2">주장규's personal space</a>
+      <!-- <a href="#" class="navbar__logo_2"> Notice Subscription System</a> -->
+      <!-- <a href="#" class="navbar__logo_2">Korea University</a>
+      <a href="#" class="navbar__logo_2"> Notice Subscription System</a> -->
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__menu__item"><a href="{% url 'create_page' %}">New</a></li>
+      <li class="navbar__menu__item">
+        <a href="{% url 'list_page' %}">Home</a>
+      </li>
+      {% if user.is_authenticated %}
+      <span class="navbar__menu__item">안녕, {{user.username}}</span>
+      <li class="navbar__menu__item">
+        <a href="{% url 'logout' %}">로그아웃</a>
+      </li>
+      {% else %}
+      <li class="navbar__menu__item">
+        <a href="{% url 'login' %}">로그인</a>
+      </li>
+      <!-- <li class="navbar__menu__item">
+        <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+      </li> -->
+      <form class="login" method="POST" action="{% provider_login_url 'kakao' %}">
+        {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="primaryAction2" type="submit">카카오 로그인</button>
+      </form>
+      <li class="navbar__menu__item">
+        <a href="{% url 'signup' %}">회원가입</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="page-header">
+        <h2>POSTS</h2>
+      </header>
+      <div class="content-container">
+
+        {% block content %}
+        <!-- 여기엔 흰 페이지 위에 나와야할 것들을 넣으면 됨. -->
+        {% endblock content %}
+
+      </div>
+      {% block button %}
+
+      {% endblock button %}
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer">
+      INSTAGRAM: canada_joose
+    </div>
+    <div class="footer">
+      © COPYRIGHT 2022 HTML
+    </div>
+  </footer>
+
+</body>
+
+</html>

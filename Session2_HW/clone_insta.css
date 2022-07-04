@@ -1,0 +1,164 @@
+.allcontent {
+    width: 460px;
+    height: 950px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.leftbanner {
+    display: flex;
+    align-items: center;
+}
+.time {
+    font-size: 18px;
+}
+#blank {
+    width: 45px;
+    height: 30px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.posts {
+    width: 150px;
+    height: 150px;
+}
+
+#profilepic {
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+}
+#mypic {
+    width: 30px;
+    height: 30px;
+}
+
+.mybanner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.belowbanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.belowprofile {
+    margin-left: 10px;
+}
+
+.arrowdiv {
+    width: 90px;
+}
+.belowcontainerright {
+    display: flex;
+    width: 90px;
+    justify-content: space-between;
+}
+
+.koreanname {
+    font-size: 14px;
+}
+
+.description {
+    font-size: 14px;
+    color:rgb(138, 138, 138)
+}
+
+.name {
+    font-weight: 700;
+    font-size: 18px;
+}
+.link {
+    font-size: 14px;
+    color: rgb(22, 93, 173);
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profilecontainer {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.thicker {
+    font-weight: 700;
+}
+.postscontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whoisfollowing {
+    display:flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+    color:rgb(63, 63, 63);
+}
+
+.who {
+    font-size: 14px;
+}
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gold;
+    margin-left:10px;
+}
+
+.letter_boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.letterbox {
+    flex-grow: 4;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 5%;
+    height: 35px;
+    margin-left: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+
+}
+
+.letterbox1 {
+    display:flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    margin-left: 5px;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 10%;
+}
+
+.icons_above_posts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icons_below_posts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog.css' %}">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner1">
+            <div class="header">
+                <h1 class="name">
+                    JK.Ju's Blog
+                </h1>
+                <div class="header_menu">
+                    <img class="icon" src="../static/img/magnifier.jpg" height="50px">
+                    <img class="icon" src="../static/img/account.jpg" height="50px">
+                    <img class="icon" src="../static/img/menu.png" height="55px">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <img src="../static/img/sunset.jpeg" width="100%" alt="This is a picture of sunset I took the other day">
+        </div>
+    </div>
+
+    <div class="inner2">
+        <h2 class="big_size">Write New Post</h2>
+        <form action="/new" method="post">
+            {% csrf_token %}
+            <!-- 위에거는 에러방지를 위해 -->
+            <div class="center">
+                <div class="less_big_size2">title</div>
+                <input type="text" name="title" />
+                <br>
+            </div>
+            <div class="center">
+                <div class="less_big_size2">category</div>
+                <input type="text" name="category"></input>
+                <br>
+            </div>
+            <div class="center">
+                <div class="less_big_size2">content</div>
+                <textarea name="content" cols="50" rows="10"></textarea>
+                <br>
+            </div>
+            <div class="center">
+                <button type="submit">submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

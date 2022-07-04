@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK.Ju's page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog.css' %}">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner1">
+            <div class="header">
+                <h1 class="name">
+                    JK.Ju's Blog
+                </h1>
+                <div class="header_menu">
+                    <img class="icon" src="../static/img/magnifier.jpg" height="50px">
+                    <img class="icon" src="../static/img/account.jpg" height="50px">
+                    <img class="icon" src="../static/img/menu.png" height="55px">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <img src="../static/img/sunset.jpeg" width="100%" alt="This is a picture of sunset I took the other day">
+        </div>
+
+        <div class="inner2">
+            <div id="introduction">
+                <div class="big_size">안녕하세요,</div>
+                <div class="break"></div>
+                <div>고려대학교 멋쟁이 사자처럼 10기이자,</div>
+                <div>심리학부 석사과정생으로 공부하고 있는 주장규입니다.</div>
+                <div>Welcome to my blog.</div>
+            </div>
+
+            <div class="self_image">
+                <img src="../static/img/self.jpeg" height="430px">
+                <div id="introduction2">
+                    <div class="big_size">남색과 주황색, 그리고 </div>
+                    <div class="big_size">검은색을 좋아합니다.</div>
+                    <br>
+                    <div>이 색깔들을 모두 볼 수 있는</div>
+                    <div>맑은 날의 해질녘 노을을 좋아합니다.</div>
+                    <br>
+                    <div>이 사진은 2019년 가을, </div>
+                    <div>시애틀의 한 해변에서 찍은 사진입니다.</div>
+                    <br>
+                    <div>이 사진을 찍어준 친구에게 평생의 고마움을 느낍니다.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner3">
+            <div class="category_title">
+                <div class="big_size">Categories</div>
+                <div class="less_size">
+                    <a href="{% url 'new' %}" class="inside">Write </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="categories_menu">
+                <div class="loop">
+                    {% for category in categories %}
+                    <div class="less_big_size">
+                        <a href="{% url 'category' category %}">{{category}} </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="center5">
+                    <div class="less_big_size4">
+                        ({{hobby_count}})
+                    </div>
+                    <div class="less_big_size4">
+                        ({{food_count}})
+                    </div>
+                    <div class="less_big_size4">
+                        ({{programming_count}})
+                    </div>
+                </div>
+
+                <!-- <div class="each">
+                    <span class="less_big_size3"> Hobby
+                    </span><span class="less_big_size3">
+                        <a href="{% url 'category' %}">({{hobby_count}})</a>
+                    </span>
+
+                </div>
+                <div class="each">
+                    <span class="less_big_size3">Food</span>
+                    <span class="less_big_size3">
+                        <a href="{% url 'category' %}">({{ food_count }})</a>
+                    </span>
+                </div>
+                <div class="each">
+                    <span class="less_big_size3">Programming </span>
+                    <span class="less_big_size3">
+                        <a href="{% url 'category' %}">({{ programming_count }})</a>
+                    </span>
+                </div> -->
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+</html>

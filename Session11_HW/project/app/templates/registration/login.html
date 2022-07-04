@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %} {% load socialaccount %} {% providers_media_js %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+{% endblock css %}
+
+{% block content %}
+
+<section id="login">
+    <form method="POST">
+        {% csrf_token %} {% if error %}
+        <p>{{error}}</p>
+        {% endif %}
+        <div class="container">
+            <h3>WELCOME</h3>
+            <br>
+            <input type="text" name="username" placeholder="🔎 Username" />
+            <br>
+            <input type="password" name="password" placeholder="🔒 Password" />
+            <br>
+            <button class="login22">로그인</button>
+
+            <form class="login" method="POST" action="{% provider_login_url 'kakao' %}">
+                {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="primaryAction" type="submit">카카오 로그인</button>
+            </form>
+            <br>
+            <br>
+            <button>
+                <a class="login22" href="{% url 'signup' %}">회원가입</.a>
+            </button>
+        </div>
+
+    </form>
+</section>
+{% endblock content %}

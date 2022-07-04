@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/detail_page.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <title>DETAIL</title>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="page-header">
+        <h2>POST DETAIL</h2>
+      </header>
+      <br>
+      <div class="content-container">
+        <h3>TITLE: {{ post.title }}</h3>
+        <br>
+        <p>CONTENT: {{ post.content }}</p>
+      </div>
+      <br>
+      <div class="buttons">
+        <a class="btn" href="{% url 'list_page' %}">RETURN</a>
+        <a class="btn" href="{% url 'edit_page' post.pk %}">EDIT</a>
+        <a class="btn" href="{% url 'delete' post.pk %}">DELETE</a>
+      </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.centerer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 66%;
+    width: 100%;
+}
+
+.form-button {
+    width: 100%;
+    
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.detail-container2 {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+.thick {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-right: 20px;
+}
+
+.likebox {
+    display: flex;
+    flex-direction: row;
+}

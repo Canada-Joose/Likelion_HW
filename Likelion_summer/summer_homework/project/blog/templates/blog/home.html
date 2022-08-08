@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/home.css' %}" />
+{% endblock css %}
+
+
+{% block content %}
+<div class="liner">
+    <h3>성북구 안암동 추천 매물 목록</h3>
+    <div class="movebutton">
+        <a class="write-btn1" href="{% url 'blog:new' %}">매물 등록하기</a>
+    </div>
+</div>
+<ul class="fourinrow">
+    {% for post in posts %}
+    <li>
+        <a href="{% url 'blog:detail' post.pk %}">{{ post.title }}</a>
+        <br>
+        {% if post.mainphoto %}
+        <img src="{{ post.mainphoto.url }}" alt="" height="200" width="200" object-fit="cover">
+        <br>
+        {% endif %}
+        <p>{{ post.realtor }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+<!-- </section> -->
+{% block button %}
+<br>
+<br>
+<br>
+<div class="buttoncenter">
+</div>
+{% endblock button %}

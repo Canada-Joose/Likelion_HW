@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title>방플</title>
+    {% block css %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- 모달을 강조할 배경 레이어 -->
+    <div class="modal-container">
+        <!-- 배경 위에 얹어지는 실제 모달 컨테이너 -->
+        <div class="modal">
+            <!-- 모달 상단 헤더 -->
+            <div class="modal-header mb-10">
+                <!-- 상단 제목 -->
+                <p class="modal-title font-bold mb-10">NOTICE</p>
+                <!-- 닫기 버튼 -->
+                <button class="modal-close">
+                    <img src="../../static/blog/icons/close-x.svg" alt="close" />
+                </button>
+            </div>
+            <!-- 모달 내용 -->
+            <article class="modal-body text-center">
+                <p>📆 2022년 8월 8일 기준</p>
+                <p>🔎 주소는 '서울특별시 성북구 안암동'만 검색 가능합니다.</p>
+                <p>📍 빠른 시일 내로 주소 범위를 서울시 전체로 확장하겠습니다.</p>
+                <p>🙏 조금만 기다려주시면 감사하겠습니다.</p>
+                <br>
+            </article>
+            <!-- 오늘 하루 보지 않기 버튼 -->
+            <button class="modal-stop-button text-left text-gray">
+                ✔️ 하루 동안 보지 않기
+            </button>
+        </div>
+    </div>
+
+
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <a href="#" class="navbar__logo_1">방플</a>
+            <a href="#" class="navbar__logo_2">현대인을 위한 자취방 리뷰 플랫폼</a>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__menu__item"><a href="{% url 'blog:new' %}" class="white">New</a></li>
+            <li class="navbar__menu__item">
+                <a href="{% url 'blog:home' %}" class="white">Home</a>
+            </li>
+            {% if user.is_authenticated %}
+            <span class="navbar__menu__item">안녕, {{user.username}}</span>
+            <li class="navbar__menu__item">
+                <a href="#" class="white">로그아웃</a>
+            </li>
+            {% else %}
+            <li class="navbar__menu__item">
+                <a href="#" class="white">로그인</a>
+            </li>
+            <li class="navbar__menu__item">
+                <a href="#" class="white">회원가입</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="page-container">
+            <div class="content-container1">
+                <p class="white headtitle leftpadding">어떤 방을 찾으세요?</p>
+                <div class="spacebetween">
+                    <p class="white headsubtitle leftpadding medium">주소</p>
+                    <div class="btn-open-modal btn white nopadding">주소 변경</div>
+                </div>
+
+                <div class="whitebox">
+                    <p class="headsubtitle">🔎 서울특별시 성북구 안암동</p>
+                </div>
+            </div>
+            <div class="content-container2">
+
+                {% block content %}
+                <!-- 여기엔 흰 페이지 위에 나와야할 것들을 넣으면 됨. -->
+                {% endblock content %}
+
+            </div>
+            {% block button %}
+
+            {% endblock button %}
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerbox">
+            방플, 현대인을 위한 자취방 리뷰 플랫폼
+        </div>
+        <div class="footerbox">
+            © COPYRIGHT 2022 HTML
+        </div>
+    </footer>
+
+    <script type="module" src="../../static/blog/js/index.js"></script>
+</body>
+
+</html>

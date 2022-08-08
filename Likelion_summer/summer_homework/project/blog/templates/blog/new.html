@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/new.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<div class="centerer">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input type="submit" class="form-button">
+    </form>
+</div>
+
+{% endblock content %}
+
+
+{% block button %}
+
+{% endblock button %}

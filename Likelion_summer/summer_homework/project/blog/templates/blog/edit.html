@@ -1,0 +1,25 @@
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="title">매물</label>
+            <input type="text" id="title" name="title" value="{{ post.title }}">
+        </div>
+        <div>
+            <div>사진</div>
+            {% if post.mainphoto %}
+            <img src="{{ post.mainphoto.url }}" alt="" height="300">
+            <br>
+            {% endif %}
+        </div>
+        <div>
+            <label for="realtor">공인중개사</label>
+            <input type="text" id="realtor" name="realtor" value="{{ post.realtor }}">
+        </div>
+        <div>
+            <label for="content">특이사항</label>
+            <textarea name="content" id="content" cols="30" rows="10">{{ post.content }}</textarea>
+        </div>
+        <button type="submit">수정하기</button>
+    </form>
+</body>

@@ -1,0 +1,83 @@
+{% extends 'blog/base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/new.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<div class="detail-container">
+    <h3>매물 상세</h3>
+    <div class="detail-container2">
+        <div class="container-photo">
+            {% if post.mainphoto %}
+            <img src="{{ post.mainphoto.url }}" alt="" height="300">
+            <br>
+            {% endif %}
+        </div>
+        <div class="container-text">
+            <br>
+            <div>
+                <span class="thick">매물 종류 </span><span> {{ post.title }}</span>
+            </div>
+            <br>
+            <div>
+                <span class="thick">공인중개사 </span><span> {{ post.realtor }}</span>
+            </div>
+            <div>
+                <p class="thick">특이사항</p>
+                <p>{{ post.content }}</p>
+            </div>
+            <br>
+            <div>
+                <a href="{% url 'blog:home' %}">HOME</a>
+                <a href="{% url 'blog:edit' post.pk %}">EDIT</a>
+                <a href="{% url 'blog:delete' post.pk %}">DELETE</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="likes-comments">
+        <div class="likebox">
+            <button id="like-button" onclick="like()">좋아요</button>
+            <div id="like-count">좋아요 {{post.likes.count}}개</div>
+        </div>
+        <form method="POST">
+            <p class="titles"> COMMENTS </p>
+            {% csrf_token %}
+            {% if user.is_authenticated and comment.author.pk == user.pk %}
+            <input type="text" name="content" placeholder="댓글을 입력해주세요">
+            <button class="commentbutton" type="submit">ADD</button>
+            {% endif %}
+        </form>
+        <div class="commentbox">
+            <br>
+            {% for comment in post.comments.all %}
+            <li class="list">
+                {{ comment.content }}
+                {% if user.is_authenticated and comment.author.pk == user.pk %}
+                <a href="{% url 'blog:delete_comment' post.pk comment.pk %}" class="commentbutton2">DELETE</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block button %}
+
+{% endblock button %}
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const like = () => {
+        axios.post('/like', { post_pk: "{{post.pk}}" })
+            .then(res => document.getElementById("like-count").innerHTML = "좋아요" + res.data.like_count + '개')
+    }
+</script>
